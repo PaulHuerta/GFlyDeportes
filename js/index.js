@@ -13,6 +13,11 @@ const teams = {
   ],
 };
 
+const leagueBackgrounds = {
+  LMP: 'logos/LMP/background.png',
+};
+
+// Generar días dinámicos en el selector de día
 const daySelect = document.getElementById("matchDay");
 for (let day = 1; day <= 31; day++) {
   const option = document.createElement("option");
@@ -56,10 +61,14 @@ function generateFlyer() {
   const canvas = document.getElementById("flyerCanvas");
   const ctx = canvas.getContext("2d");
 
-  const backgroundImage = new Image();
-  backgroundImage.src = "logos/LMP/background.png"; // Ruta de la imagen de fondo
-  backgroundImage.onload = () => {
-    ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
+
+
+    // Seleccionar liga y cargar fondo
+    const selectedLeague = document.getElementById("league").value;
+    const backgroundImage = new Image();
+    backgroundImage.src = leagueBackgrounds[selectedLeague] || 'default_background.jpg';
+    backgroundImage.onload = () => {
+      ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
 
     const teamA = document.getElementById("teamA").selectedOptions[0].text;
     const logoA = document.getElementById("teamA").value;
@@ -93,7 +102,12 @@ function generateFlyer() {
     ctx.fillStyle = "#FD4D16";
     ctx.fillText(`${matchDay}`, 432, 665);
 
+    // Generar el texto dinámico para copiar
+    const dynamicText = `¡No te pierdas la temporada 2024 - 2025 de la 𝗟𝗠𝗣! 🥳\n\n${teamA} vs ${teamB} hoy a las ${matchTime} CT. 🏟️⚾️\n\n✅ ¡Disponible en 𝗩𝗶𝘅𝗶 𝗧𝗩!✅\n\n¿𝗔𝘂́𝗻 𝗻𝗼 𝗲𝗿𝗲𝘀 𝗰𝗹𝗶𝗲𝗻𝘁𝗲? ¡𝗦𝗼𝗹𝗶𝗰𝗶𝘁𝗮 𝗵𝗼𝘆 𝘁𝘂 𝗽𝗿𝘂𝗲𝗯𝗮 𝗴𝗿𝗮𝘁𝗶𝘀! 😍\n➡️ https://wa.me/message/7XQ6SOCH7LPDA1\n\n#Entretenimiento #tv #vixitv #Deportes #ligamexicanadelpacifico #lmp #beisbol`;
+    document.getElementById("dynamicText").value = dynamicText;
+
     document.getElementById("downloadBtn").style.display = "block";
+    document.getElementById("copyTextBtn").style.display = "block";
   };
 }
 
@@ -105,6 +119,15 @@ document.getElementById("downloadBtn").addEventListener("click", function () {
   link.href = image;
   link.download = "flyer.png";
   link.click();
+});
+
+document.getElementById("copyTextBtn").addEventListener("click", function () {
+  const dynamicText = document.getElementById("dynamicText");
+  dynamicText.style.display = "block";
+  dynamicText.select();
+  document.execCommand("copy");
+  dynamicText.style.display = "none";
+  alert("Texto copiado al portapapeles");
 });
 
 // Inicializar con la primera liga seleccionada
