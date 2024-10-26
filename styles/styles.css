@@ -14,11 +14,12 @@ body {
 }
 
 .container {
+  margin: 15px auto;
   text-align: center;
   max-width: 400px;
   width: 90%;
   background-color: #ffffff;
-  padding: 20px;
+  padding: 15px;
   border-radius: 8px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -58,7 +59,7 @@ select, input[type="time"] {
 }
 
 button {
-  padding: 10px 20px;
+  padding: 15px 20px;
   background-color: #00152A;
   color: white;
   border: none;
@@ -69,8 +70,13 @@ button {
   margin-top: 10px;
 }
 
+
 button:hover {
   background-color: #012D4A;
+}
+
+button:active {
+  scale: 0.95;
 }
 
 /* Canvas responsive */
@@ -79,7 +85,8 @@ canvas {
   border: 2px solid #333;
   width: 100%;
   height: auto;
-  max-width: 600px; /* Se adapta a la pantalla, pero no supera los 600px en ancho */
+  max-width: 600px;
+  /* Se adapta a la pantalla, pero no supera los 600px en ancho */
   border-radius: 8px;
 }
 
@@ -87,5 +94,5 @@ canvas {
 #downloadBtn {
   margin-top: 20px;
   width: 100%;
-  padding: 10px 20px;
+  padding: 15px 20px;
 }

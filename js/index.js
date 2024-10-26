@@ -82,13 +82,15 @@ function generateFlyer() {
       ctx.drawImage(teamBLogo, 755, 340, 200, 255);
     };
 
-    ctx.font = "bold 40px Roboto";
+    ctx.font = "900 40px Roboto";
     ctx.fillStyle = "#ffffff";
     ctx.textAlign = "center";
-
-    ctx.fillText(`${matchDay}`, 400, 665);
-    ctx.fillText(`${matchMonth}`, 476, 665);
-    ctx.fillText(`${matchTime}`, 2, 100);
+    ctx.fillText(`${matchTime}`, 615, 665);
+    ctx.textAlign = "right";
+    ctx.fillText(`${matchMonth}`, 512, 665);
+    ctx.font = "900 40px Roboto";
+    ctx.fillStyle = "#FD4D16";
+    ctx.fillText(`${matchDay}`, 440, 665);
 
     document.getElementById("downloadBtn").style.display = "block";
   };
