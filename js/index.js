@@ -91,7 +91,7 @@ function generateFlyer() {
 
     ctx.font = "900 40px Roboto";
     ctx.fillStyle = "#FD4D16";
-    ctx.fillText(`${matchDay}`, 435, 665);
+    ctx.fillText(`${matchDay}`, 432, 665);
 
     document.getElementById("downloadBtn").style.display = "block";
   };
