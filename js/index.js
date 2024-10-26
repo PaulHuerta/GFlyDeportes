@@ -88,6 +88,7 @@ function generateFlyer() {
     ctx.fillText(`${matchTime}`, 615, 665);
     ctx.textAlign = "right";
     ctx.fillText(`${matchMonth}`, 512, 665);
+
     ctx.font = "900 40px Roboto";
     ctx.fillStyle = "#FD4D16";
     ctx.fillText(`${matchDay}`, 435, 665);
