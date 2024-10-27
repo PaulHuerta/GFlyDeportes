@@ -1,3 +1,5 @@
+
+// logos de ligas
 const teams = {
   LMP: [
     { name: "Aguilas", logo: "LMP/aguilas.png" },
@@ -13,8 +15,14 @@ const teams = {
   ],
 };
 
+//Fondo de liga
 const leagueBackgrounds = {
   LMP: 'logos/LMP/background.png',
+};
+
+//Mensajes por liga
+const leagueMessages = {
+  LMP: "¡No te pierdas la temporada 2024 - 2025 de la 𝗟𝗠𝗣! 🥳\n\n"
 };
 
 // Generar días dinámicos en el selector de día
@@ -103,7 +111,9 @@ function generateFlyer() {
     ctx.fillText(`${matchDay}`, 432, 665);
 
     // Generar el texto dinámico para copiar
-    const dynamicText = `¡No te pierdas la temporada 2024 - 2025 de la 𝗟𝗠𝗣! 🥳\n\n${teamA} vs ${teamB} hoy a las ${matchTime} CT. 🏟️⚾️\n\n✅ ¡Disponible en 𝗩𝗶𝘅𝗶 𝗧𝗩!✅\n\n¿𝗔𝘂́𝗻 𝗻𝗼 𝗲𝗿𝗲𝘀 𝗰𝗹𝗶𝗲𝗻𝘁𝗲? ¡𝗦𝗼𝗹𝗶𝗰𝗶𝘁𝗮 𝗵𝗼𝘆 𝘁𝘂 𝗽𝗿𝘂𝗲𝗯𝗮 𝗴𝗿𝗮𝘁𝗶𝘀! 😍\n➡️ https://wa.me/message/7XQ6SOCH7LPDA1\n\n#Entretenimiento #tv #vixitv #Deportes #ligamexicanadelpacifico #lmp #beisbol`;
+    const leagueMessage = leagueMessages[selectedLeague] || "¡No te pierdas este gran partido! 🎉\n\n";
+    const dynamicText = `${leagueMessage}${teamA} vs ${teamB} hoy a las ${matchTime} CT. 🏟 \n\n✅ ¡Disponible en 𝗩𝗶𝘅𝗶 𝗧𝗩! ✅\n\n¿𝗔𝘂́𝗻 𝗻𝗼 𝗲𝗿𝗲𝘀 𝗰𝗹𝗶𝗲𝗻𝘁𝗲? ¡𝗦𝗼𝗹𝗶𝗰𝗶𝘁𝗮 𝗵𝗼𝘆 𝘁𝘂 𝗽𝗿𝘂𝗲𝗯𝗮 𝗴𝗿𝗮𝘁𝗶𝘀! 😍\n➡️ https://wa.me/message/7XQ6SOCH7LPDA1\n\n#Entretenimiento #tv #vixitv #Deportes #ligamexicanadelpacifico #lmp #beisbol`;
+
     document.getElementById("dynamicText").value = dynamicText;
 
     document.getElementById("downloadBtn").style.display = "block";
