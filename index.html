@@ -1,72 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Generador de Flyers de Partidos</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles/normalize.css" />
+    <title>Menú Inicial - Vixi TV</title>
+    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/styles.css" />
+
+    <style>
+      /* Reset y estilos base */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #00152a;
+        color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        text-align: center;
+      }
+
+      /* Estilos del contenedor principal del menú */
+      .menu-container {
+        background-color: #ffffff;
+        color: #00152a;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        width: 90%;
+        max-width: 400px;
+      }
+
+      /* Título del menú */
+      .menu-container h1 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+        color: #333;
+      }
+
+      /* Descripción del menú */
+      .menu-container p {
+        font-size: 1em;
+        margin-bottom: 20px;
+        color: #555;
+      }
+
+      /* Contenedor de opciones de menú */
+      .menu-options {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      /* Estilos de los enlaces del menú */
+      .menu-link {
+        display: block;
+        padding: 15px;
+        font-size: 1.2em;
+        font-weight: bold;
+        text-decoration: none;
+        color: #ffffff;
+        background-color: #00152a;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+      }
+
+      .menu-link:hover {
+        background-color: #012d4a;
+      }
+
+      .menu-link:active {
+        scale: 0.95;
+      }
+    </style>
   </head>
   <body>
-    <div class="container">
-      <h1>Deportes Vixi TV</h1>
-      <form id="matchForm">
-        <div>
-          <label for="league">Liga/Deporte:</label>
-          <select id="league" name="league">
-            <option value="LMP">LMP - Beisbol</option>
-          </select>
-        </div>
-        <div>
-          <label for="teamA">Equipo A:</label>
-          <select id="teamA" name="teamA"></select>
-        </div>
-        <div>
-          <label for="teamB">Equipo B:</label>
-          <select id="teamB" name="teamB"></select>
-        </div>
-        <div>
-          <label for="matchDay">Día:</label>
-          <select id="matchDay" name="matchDay">
-            <!-- Generar opciones de días dinámicamente en JavaScript -->
-          </select>
-        </div>
-        <div>
-          <label for="matchMonth">Mes:</label>
-          <select id="matchMonth" name="matchMonth">
-            <option value="Ene">Ene</option>
-            <option value="Feb">Feb</option>
-            <option value="Mar">Mar</option>
-            <option value="Abr">Abr</option>
-            <option value="May">May</option>
-            <option value="Jun">Jun</option>
-            <option value="Jul">Jul</option>
-            <option value="Ago">Ago</option>
-            <option value="Sep">Sep</option>
-            <option value="Oct">Oct</option>
-            <option value="Nov">Nov</option>
-            <option value="Dic">Dic</option>
-          </select>
-        </div>
-        <div>
-          <label for="matchTime">Hora:</label>
-          <input type="time" id="matchTime" required />
-        </div>
-        <button type="submit">Generar Imagen</button>
-      </form>
-      <canvas id="flyerCanvas" width="1080" height="1080"></canvas>
-      <button id="downloadBtn" style="display: none">Descargar</button>
-
-      <!-- Campo de texto oculto con el mensaje generado dinámicamente -->
-      <textarea id="dynamicText" style="display: none"></textarea>
-      <button id="copyTextBtn" style="display: none">Copiar Texto</button>
+    <div class="menu-container">
+      <h1>Bienvenido a Vixi TV</h1>
+      <p>Selecciona una sección para comenzar:</p>
+      <div class="menu-options">
+        <a href="deportes.html" class="menu-link">Deportes Vixi</a>
+        <a href="feed.html" class="menu-link">Feed Vixi</a>
+      </div>
     </div>
-    <script src="js/index.js"></script>
   </body>
 </html>

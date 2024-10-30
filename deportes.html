@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generador de Flyers de Partidos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Deportes Vixi TV</h1>
+      <form id="matchForm">
+        <div>
+          <label for="league">Liga/Deporte:</label>
+          <select id="league" name="league">
+            <option value="LMP">LMP - Beisbol</option>
+          </select>
+        </div>
+        <div>
+          <label for="teamA">Equipo A:</label>
+          <select id="teamA" name="teamA"></select>
+        </div>
+        <div>
+          <label for="teamB">Equipo B:</label>
+          <select id="teamB" name="teamB"></select>
+        </div>
+        <div>
+          <label for="matchDay">Día:</label>
+          <select id="matchDay" name="matchDay">
+            <!-- Generar opciones de días dinámicamente en JavaScript -->
+          </select>
+        </div>
+        <div>
+          <label for="matchMonth">Mes:</label>
+          <select id="matchMonth" name="matchMonth">
+            <option value="Ene">Ene</option>
+            <option value="Feb">Feb</option>
+            <option value="Mar">Mar</option>
+            <option value="Abr">Abr</option>
+            <option value="May">May</option>
+            <option value="Jun">Jun</option>
+            <option value="Jul">Jul</option>
+            <option value="Ago">Ago</option>
+            <option value="Sep">Sep</option>
+            <option value="Oct">Oct</option>
+            <option value="Nov">Nov</option>
+            <option value="Dic">Dic</option>
+          </select>
+        </div>
+        <div>
+          <label for="matchTime">Hora:</label>
+          <input type="time" id="matchTime" required />
+        </div>
+        <button type="submit">Generar Imagen</button>
+      </form>
+      <canvas id="flyerCanvas" width="1080" height="1080"></canvas>
+
+      <div class="button-container hidden" id="buttonContainer">
+        <button id="downloadBtn">Descargar</button>
+        <button id="copyTextBtn">Copiar Texto</button>
+      </div>
+
+      <!-- Campo de texto oculto con el mensaje generado dinámicamente -->
+      <textarea id="dynamicText" style="display: none"></textarea>
+    </div>
+    <script src="js/deportes.js"></script>
+  </body>
+</html>

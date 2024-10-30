@@ -116,8 +116,7 @@ function generateFlyer() {
 
     document.getElementById("dynamicText").value = dynamicText;
 
-    document.getElementById("downloadBtn").style.display = "block";
-    document.getElementById("copyTextBtn").style.display = "block";
+    document.getElementById("buttonContainer").classList.remove("hidden");
   };
 }
 
