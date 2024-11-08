@@ -118,7 +118,8 @@ function generarTextoDinamico() {
   const sinopsis = document.getElementById("synopsis").value;
 
   // Texto dinámico basado en los datos ingresados
-  const texto = `🎬 ¡No te pierdas ${titulo} (${tipo})!\n\n📖 Sinopsis: ${sinopsis}\n\n📺 Disponible en Vixi TV`;
+  const texto = `¡𝗡𝘂𝗲𝘃𝗮 𝗮𝗰𝘁𝘂𝗮𝗹𝗶𝘇𝗮𝗰𝗶𝗼́𝗻 𝗱𝗲 𝗰𝗼𝗻𝘁𝗲𝗻𝗶𝗱𝗼! 🥳\n\n${titulo} - 𝗬𝗮 𝗗𝗶𝘀𝗽𝗼𝗻𝗶𝗯𝗹𝗲 ✅\n\n¿𝗔𝘂́𝗻 𝗻𝗼 𝗲𝗿𝗲𝘀 𝗰𝗹𝗶𝗲𝗻𝘁𝗲? ¡𝗦𝗼𝗹𝗶𝗰𝗶𝘁𝗮 𝗵𝗼𝘆 𝘁𝘂 𝗽𝗿𝘂𝗲𝗯𝗮 𝗴𝗿𝗮𝘁𝗶𝘀! 😍
+➡️ https://wa.me/message/WIUSJB3VUFE5I1 \n\n#streaming #peliculas #Entretenimiento #tv #cine #series #vixitv`;
 
   // Asignar el texto al campo de texto oculto
   document.getElementById("dynamicText").value = texto;
