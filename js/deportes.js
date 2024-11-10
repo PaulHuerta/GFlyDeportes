@@ -1,4 +1,3 @@
-
 // logos de ligas
 const teams = {
   LMP: [
@@ -13,16 +12,38 @@ const teams = {
     { name: "Venados", logo: "LMP/venados.png" },
     { name: "Yaquis", logo: "LMP/yaquis.png" },
   ],
+  LMX: [
+    { name: "America", logo: "LMX/lgAmerica.png" },
+    { name: "Atlas", logo: "LMX/lgAtlas.png" },
+    { name: "Cruz Azul", logo: "LMX/lgCruzAzul.png" },
+    { name: "Guadalajara", logo: "LMX/lgGuadalajara.png" },
+    { name: "Juarez", logo: "LMX/lgJuarez.png" },
+    { name: "León", logo: "LMX/lgLeon.png" },
+    { name: "Mazatlan", logo: "LMX/lgMazatlan.png" },
+    { name: "Monterrey", logo: "LMX/lgMonterrey.png" },
+    { name: "Necaxa", logo: "LMX/lgNecaxa.png" },
+    { name: "Pachuca", logo: "LMX/lgPachuca.png" },
+    { name: "Puebla", logo: "LMX/lgPuebla.png" },
+    { name: "Pumas", logo: "LMX/lgPumas.png" },
+    { name: "Querétearo", logo: "LMX/lgQueretaro.png" },
+    { name: "Santos", logo: "LMX/lgSantos.png" },
+    { name: "San Luis", logo: "LMX/lgSanLuis.png" },
+    { name: "Tigres", logo: "LMX/lgTigres.png" },
+    { name: "Tijuana", logo: "LMX/lgTijuana.png" },
+    { name: "Toluca", logo: "LMX/lgToluca.png" },
+  ],
 };
 
 //Fondo de liga
 const leagueBackgrounds = {
-  LMP: 'logos/LMP/background.png',
+  LMP: "logos/LMP/background.png",
+  LMX: "logos/LMX/background.png",
 };
 
 //Mensajes por liga
 const leagueMessages = {
-  LMP: "¡No te pierdas la temporada 2024 - 2025 de la 𝗟𝗠𝗣! 🥳\n\n"
+  LMP: "¡No te pierdas la temporada 2024 - 2025 de la 𝗟𝗠𝗣! 🥳\n\n",
+  LMX: "¡No te pierdas el torneo de Apertura 2024 de la Liga MX! 🥳\n\n",
 };
 
 // Generar días dinámicos en el selector de día
@@ -69,14 +90,13 @@ function generateFlyer() {
   const canvas = document.getElementById("flyerCanvas");
   const ctx = canvas.getContext("2d");
 
-
-
-    // Seleccionar liga y cargar fondo
-    const selectedLeague = document.getElementById("league").value;
-    const backgroundImage = new Image();
-    backgroundImage.src = leagueBackgrounds[selectedLeague] || 'default_background.jpg';
-    backgroundImage.onload = () => {
-      ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
+  // Seleccionar liga y cargar fondo
+  const selectedLeague = document.getElementById("league").value;
+  const backgroundImage = new Image();
+  backgroundImage.src =
+    leagueBackgrounds[selectedLeague] || "default_background.jpg";
+  backgroundImage.onload = () => {
+    ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
 
     const teamA = document.getElementById("teamA").selectedOptions[0].text;
     const logoA = document.getElementById("teamA").value;
@@ -111,11 +131,12 @@ function generateFlyer() {
     ctx.fillText(`${matchDay}`, 432, 665);
 
     // Generar el texto dinámico para copiar
-    const leagueMessage = leagueMessages[selectedLeague] || "¡No te pierdas este gran partido! 🎉\n\n";
-    const dynamicText = `${leagueMessage}${teamA} vs ${teamB} hoy a las ${matchTime} CT. 🏟 \n\n✅ ¡Disponible en 𝗩𝗶𝘅𝗶 𝗧𝗩! ✅\n\n¿𝗔𝘂́𝗻 𝗻𝗼 𝗲𝗿𝗲𝘀 𝗰𝗹𝗶𝗲𝗻𝘁𝗲? ¡𝗦𝗼𝗹𝗶𝗰𝗶𝘁𝗮 𝗵𝗼𝘆 𝘁𝘂 𝗽𝗿𝘂𝗲𝗯𝗮 𝗴𝗿𝗮𝘁𝗶𝘀! 😍\n➡️ https://wa.me/message/7XQ6SOCH7LPDA1\n\n#Entretenimiento #tv #vixitv #Deportes #ligamexicanadelpacifico #lmp #beisbol`;
+    const leagueMessage =
+      leagueMessages[selectedLeague] ||
+      "¡No te pierdas este gran partido! 🎉\n\n";
+    const dynamicText = `${leagueMessage}${teamA} vs ${teamB} hoy a las ${matchTime} CT. 🏟 \n\n✅ ¡Disponible en 𝗩𝗶𝘅𝗶 𝗧𝗩! ✅\n\n¿𝗔𝘂́𝗻 𝗻𝗼 𝗲𝗿𝗲𝘀 𝗰𝗹𝗶𝗲𝗻𝘁𝗲? ¡𝗦𝗼𝗹𝗶𝗰𝗶𝘁𝗮 𝗵𝗼𝘆 𝘁𝘂 𝗽𝗿𝘂𝗲𝗯𝗮 𝗴𝗿𝗮𝘁𝗶𝘀! 😍\n➡️ https://wa.me/message/WIUSJB3VUFE5I1\n\n#Entretenimiento #tv #vixitv #Deportes`;
 
     document.getElementById("dynamicText").value = dynamicText;
-
     document.getElementById("buttonContainer").classList.remove("hidden");
   };
 }
@@ -126,7 +147,7 @@ document.getElementById("downloadBtn").addEventListener("click", function () {
 
   const link = document.createElement("a");
   link.href = image;
-  link.download = "flyer.png";
+  link.download = "flyerDeportes.png";
   link.click();
 });
 
