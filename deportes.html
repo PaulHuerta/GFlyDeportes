@@ -14,12 +14,14 @@
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
   <body>
+    <button onclick="goToMainMenu()" id="backToMenuBtn">Menú Principal</button>
     <div class="container">
       <h1>Deportes Vixi TV</h1>
       <form id="matchForm">
         <div>
           <label for="league">Liga/Deporte:</label>
           <select id="league" name="league">
+            <option value="0" style="display: none;">-- Selecciona una opción -- </option>
             <option value="LMP">LAMP - Beisbol</option>
             <option value="LMX">Liga MX - Futbol</option>
           </select>
@@ -72,5 +74,10 @@
       <textarea id="dynamicText" style="display: none"></textarea>
     </div>
     <script src="js/deportes.js"></script>
+    <script>
+      function goToMainMenu() {
+        window.location.href = 'index.html'; // Cambia 'index.html' a la URL de tu menú principal
+      }
+    </script>
   </body>
 </html>

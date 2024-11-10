@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
   <body>
+    <button onclick="goToMainMenu()" id="backToMenuBtn">Menú Principal</button>
     <div class="container">
       <h2>Películas y Series</h2>
       <form id="movieForm">
@@ -52,5 +53,10 @@
       <textarea id="dynamicText" class="hidden"></textarea>
     </div>
     <script src="js/feed.js"></script>
+    <script>
+      function goToMainMenu() {
+        window.location.href = "index.html"; // Cambia 'index.html' a la URL de tu menú principal
+      }
+    </script>
   </body>
 </html>
