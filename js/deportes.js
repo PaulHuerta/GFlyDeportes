@@ -75,6 +75,7 @@ const leagueMessages = {
   LMP: "¡No te pierdas la temporada 2024 - 2025 de la 𝗟𝗠𝗣! 🥳\n\n",
   LMX: "¡No te pierdas el torneo de Apertura 2024 de la Liga MX! 🥳\n\n",
   LaLIGA: "¡No te pierdas LALIGA EA Sports 2024-25! 🥳\n\n",
+  Premier12: "¡No te pierdas los partidos de la Premier12 WBSC - 2024! 🥳\n\n",
 };
 
 // Generar días dinámicos en el selector de día
