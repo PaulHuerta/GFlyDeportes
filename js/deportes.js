@@ -32,18 +32,49 @@ const teams = {
     { name: "Tijuana", logo: "LMX/lgTijuana.png" },
     { name: "Toluca", logo: "LMX/lgToluca.png" },
   ],
+  LaLIGA: [
+    { name: "Alaves", logo: "LaLiga/lgAlaves.png" },
+    { name: "Athletic", logo: "LaLiga/lgAthletic.png" },
+    { name: "Atl. Madrid", logo: "LaLiga/lgAtlMadrid.png" },
+    { name: "Barcelona", logo: "LaLiga/lgBarcelona.png" },
+    { name: "Betis", logo: "LaLiga/lgBetis.png" },
+    { name: "Celta", logo: "LaLiga/lgCelta.png" },
+    { name: "Getafe", logo: "LaLiga/lgGetafe.png" },
+    { name: "Girona", logo: "LaLiga/lgGirona.png" },
+    { name: "Leganes", logo: "LaLiga/lgLeganes.png" },
+    { name: "Madrid", logo: "LaLiga/lgMadrid.png" },
+    { name: "Mallorca", logo: "LaLiga/lgMallorca.png" },
+    { name: "Osasuna", logo: "LaLiga/lgOsasuna.png" },
+    { name: "Palmas", logo: "LaLiga/lgPalmas.png" },
+    { name: "RCD Espanyol", logo: "LaLiga/lgRCDE.png" },
+    { name: "R Sociedad", logo: "LaLiga/lgRSociedad.png" },
+    { name: "Sevilla", logo: "LaLiga/lgSevilla.png" },
+    { name: "Valencia", logo: "LaLiga/lgValencia.png" },
+    { name: "Valladolid", logo: "LaLiga/lgValladolid.png" },
+    { name: "Vallecano", logo: "LaLiga/lgVallecano.png" },
+    { name: "Villareal", logo: "LaLiga/lgVillareal.png" },
+  ],
+  Premier12: [
+    { name: "USA", logo: "Premier12/USA.png" },
+    { name: "Mexico", logo: "Premier12/Mexico.png" },
+    { name: "Panama", logo: "Premier12/Panama.png" },
+    { name: "Venezuela", logo: "Premier12/Venezuela.png" },
+  ],
 };
 
 //Fondo de liga
 const leagueBackgrounds = {
   LMP: "logos/LMP/background.png",
   LMX: "logos/LMX/background.png",
+  LaLIGA: "logos/LaLIGA/background.png",
+  Premier12: "logos/Premier12/background.png",
 };
 
 //Mensajes por liga
 const leagueMessages = {
   LMP: "¡No te pierdas la temporada 2024 - 2025 de la 𝗟𝗠𝗣! 🥳\n\n",
   LMX: "¡No te pierdas el torneo de Apertura 2024 de la Liga MX! 🥳\n\n",
+  LaLIGA: "¡No te pierdas LALIGA EA Sports 2024-25! 🥳\n\n",
 };
 
 // Generar días dinámicos en el selector de día
