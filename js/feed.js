@@ -1,6 +1,6 @@
 // Rutas de imágenes de fondo
 const backgrounds = {
-  fondo1: "background-feed.png",
+  fondo1: "defaultBG-Feed.png",
 };
 
 document
@@ -19,7 +19,7 @@ function generarFlyer() {
   const tipo = document.getElementById("category").value;
   const sinopsis = document.getElementById("synopsis").value;
   const fondo = document.getElementById("background").value;
-  const posterUrl = document.getElementById("posterUrl").value;
+  const imagenPoster = document.getElementById("poster").files[0];
 
   // Configuración del canvas
   canvas.width = 1080;
@@ -55,18 +55,21 @@ function generarFlyer() {
     wrapText(ctx, sinopsis, x, y, maxWidth, lineHeight, maxHeight);
 
     // Agregar Imagen del Poster
-    if (posterUrl) {
-      const poster = new Image();
+    if (imagenPoster) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const imgPoster = new Image();
+        imgPoster.src = e.target.result;
+        imgPoster.onload = function () {
+          const imgX = 545;
+          const imgY = 170;
+          ctx.drawImage(imgPoster, imgX, imgY, 490, 740);
 
-      poster.src = posterUrl;
-      poster.onload = function () {
-        const imgX = 545;
-        const imgY = 170;
-        ctx.drawImage(poster, imgX, imgY, 490, 740);
-
-        // Mostrar el botón de descarga después de generar la imagen
-        document.getElementById("buttonContainer").classList.remove("hidden");
+          // Mostrar el botón de descarga después de generar la imagen
+          document.getElementById("buttonContainer").classList.remove("hidden");
+        };
       };
+      reader.readAsDataURL(imagenPoster);
     } else {
       document.getElementById("downloadBtn").classList.remove("hidden");
     }

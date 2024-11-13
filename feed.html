@@ -16,22 +16,20 @@
     <div class="container">
       <h2>Películas y Series</h2>
       <form id="movieForm">
-        <label for="title">Título:</label>
-        <input type="text" id="title" required maxlength="28" />
-
         <label for="category">Categoría:</label>
         <select id="category">
           <option value="PELICULA">Película</option>
           <option value="SERIE">Serie</option>
         </select>
-
+        <label for="title">Título:</label>
+        <input type="text" id="title" required maxlength="28" />
         <label for="background">Fondo:</label>
         <select id="background">
-          <option value="background-feed.png">Fondo 1</option>
+          <option value="images/defaultBG-Feed.png">Fondo 1</option>
         </select>
 
-        <label for="posterUrl">URL del póster:</label>
-        <input type="url" id="posterUrl" placeholder="https://example.com/poster.jpg">
+        <label for="poster">Póster de la Película/Serie:</label>
+        <input type="file" id="poster" accept="image/*" />
 
         <label for="synopsis">Sinopsis:</label>
         <textarea
@@ -52,6 +50,7 @@
 
       <textarea id="dynamicText" class="hidden"></textarea>
     </div>
+
     <script src="js/feed.js"></script>
     <script>
       function goToMainMenu() {
