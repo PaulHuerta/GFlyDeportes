@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generador de URL Acortada</title>
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <!-- <style>
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
+  }
+  .container {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  h1 {
+    font-size: 1.5rem;
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  .form-control {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+  }
+  button + button {
+    margin-top: 10px;
+  }
+  #result {
+    margin-top: 15px;
+    padding: 10px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: none;
+  }
+</style> -->
+  </head>
+  <body>
+
+    <button onclick="goToMainMenu()" id="backToMenuBtn">Menú Principal</button>
+
+    <div class="container">
+      <h1>Enlace de Referidos</h1>
+      <form id="urlForm">
+        <label for="username">Usuario que recomienda</label>
+        <input
+          type="text"
+          id="username"
+          placeholder="0000"
+          required
+        />
+        <button type="submit" id="generateBtn">Generar Enlace</button>
+        <button type="button" id="copyBtn" class="hidden">Copiar URL</button>
+      </form>
+      <p id="result" hidden></p>
+    </div>
+
+
+    <script src="js/referidos.js"></script>
+    <script>
+      function goToMainMenu() {
+        window.location.href = "index.html"; // Cambia 'index.html' a la URL de tu menú principal
+      }
+    </script>
+  </body>
+</html>
