@@ -1,6 +1,6 @@
 async function generateShortURL(user) {
     const baseUrl = `https://wa.me/522214444315?text=${encodeURIComponent(
-      `Hola, ${user} me recomendo su servicio y estoy interesad@ en conocer más. 🤗`
+      `Hola, ${user} me recomendo su servicio y estoy interesad@ en conocer más. ☺️`
     )}`;
   
     try {
