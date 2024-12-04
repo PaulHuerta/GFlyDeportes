@@ -1,12 +1,12 @@
 async function generateShortURL(user) {
-  const numeroTelefono = "522214444315"; 
+  const numeroTelefono = "2214444315"; 
 
-  const mensaje = `Hola, me recomendaron su servicio y estoy interesado en conocer más. 😃
-🏷️ Tengo un descuento del 15% en mi primer mes, código: *${user}*`;
+  const mensaje = `Hola, me recomendaron su servicio y estoy interesado en conocer más. 🌟
+Tengo un descuento en mi primer mes, código: *${user}* 🎁`;
 
   const mensajeCodificado = encodeURIComponent(mensaje);
 
-  const baseUrl = `https://wa.me/${numeroTelefono}?text=${mensajeCodificado}`;
+  const baseUrl = `https://api.whatsapp.com/send?phone=52${numeroTelefono}&text=${mensajeCodificado}`;
 
   try {
     const response = await fetch(
