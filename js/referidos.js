@@ -1,8 +1,8 @@
 async function generateShortURL(user) {
   const numeroTelefono = "2214444315"; 
 
-  const mensaje = `Hola, me recomendaron su servicio y estoy interesado en conocer más. 🌟
-Tengo un descuento en mi primer mes, código: *${user}* 🎁`;
+  const mensaje = `Hola, me recomendaron su servicio. 😃
+Tengo un descuento en mi primer mes, código: *${user}* 🏷️`;
 
   const mensajeCodificado = encodeURIComponent(mensaje);
 
