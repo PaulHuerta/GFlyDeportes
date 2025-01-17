@@ -1,17 +1,5 @@
 // logos de ligas
 const teams = {
-  LMP: [
-    { name: "Aguilas", logo: "LMP/aguilas.png" },
-    { name: "Algodoneros", logo: "LMP/algodoneros.png" },
-    { name: "Cañeros", logo: "LMP/caneros.png" },
-    { name: "Charros", logo: "LMP/charros.png" },
-    { name: "Mayos", logo: "LMP/mayos.png" },
-    { name: "Naranjeros", logo: "LMP/naranjeros.png" },
-    { name: "Sultanes", logo: "LMP/sultanes.png" },
-    { name: "Tomateros", logo: "LMP/tomateros.png" },
-    { name: "Venados", logo: "LMP/venados.png" },
-    { name: "Yaquis", logo: "LMP/yaquis.png" },
-  ],
   LMX: [
     { name: "America", logo: "LMX/lgAmerica.png" },
     { name: "Atlas", logo: "LMX/lgAtlas.png" },
@@ -54,28 +42,56 @@ const teams = {
     { name: "Vallecano", logo: "LaLIGA/lgVallecano.png" },
     { name: "Villareal", logo: "LaLIGA/lgVillareal.png" },
   ],
-  Premier12: [
-    { name: "USA", logo: "Premier12/USA.png" },
-    { name: "Mexico", logo: "Premier12/Mexico.png" },
-    { name: "Panama", logo: "Premier12/Panama.png" },
-    { name: "Venezuela", logo: "Premier12/Venezuela.png" },
+  Premier: [
+    { name: "Arsenal", logo: "Premier/lgArsenal.png" },
+    { name: "Aston Villa", logo: "Premier/lgAston.png" },
+    { name: "Bournemouth", logo: "Premier/lgBournemouth.png" },
+    { name: "Brenford", logo: "Premier/lgBrenford.png" },
+    { name: "Brighton & Hove Albion", logo: "Premier/lgBrighton.png" },
+    { name: "Chelsea", logo: "Premier/lgChelsea.png" },
+    { name: "Crystal Palace", logo: "Premier/lgCrystal.png" },
+    { name: "Everton", logo: "Premier/lgEverton.png" },
+    { name: "Fulham", logo: "Premier/lgFulham.png" },
+    { name: "Ipswich Town", logo: "Premier/lgIpswich.png" },
+    { name: "Leicester City", logo: "Premier/lgLeicester.png" },
+    { name: "Liverpool", logo: "Premier/lgLiverpool.png" },
+    { name: "Manchester City", logo: "Premier/lgManchester1.png" },
+    { name: "Manchester United", logo: "Premier/lgManchester2.png" },
+    { name: "Newcastle United", logo: "Premier/lgNewcastle.png" },
+    { name: "Nottingham Forest", logo: "Premier/lgNottingham.png" },
+    { name: "Southampton", logo: "Premier/lgSouthampton.png" },
+    { name: "Tottenham Hotspur", logo: "Premier/lgTottenham.png" },
+    { name: "West Ham United", logo: "Premier/lgWest.png" },
+    { name: "Wolverhampton Wanderers", logo: "Premier/lgWolves.png" },
+  ],
+  LMP: [
+    { name: "Aguilas", logo: "LMP/aguilas.png" },
+    { name: "Algodoneros", logo: "LMP/algodoneros.png" },
+    { name: "Cañeros", logo: "LMP/caneros.png" },
+    { name: "Charros", logo: "LMP/charros.png" },
+    { name: "Mayos", logo: "LMP/mayos.png" },
+    { name: "Naranjeros", logo: "LMP/naranjeros.png" },
+    { name: "Sultanes", logo: "LMP/sultanes.png" },
+    { name: "Tomateros", logo: "LMP/tomateros.png" },
+    { name: "Venados", logo: "LMP/venados.png" },
+    { name: "Yaquis", logo: "LMP/yaquis.png" },
   ],
 };
 
 //Fondo de liga
 const leagueBackgrounds = {
-  LMP: "logos/LMP/background.png",
   LMX: "logos/LMX/background.png",
   LaLIGA: "logos/LaLIGA/background.png",
-  Premier12: "logos/Premier12/background.png",
+  Premier: "logos/Premier/background.png",
+  LMP: "logos/LMP/background.png",
 };
 
 //Mensajes por liga
 const leagueMessages = {
-  LMP: "¡No te pierdas la temporada 2024 - 2025 de la 𝗟𝗠𝗣! 🥳\n\n",
-  LMX: "¡No te pierdas el torneo de Apertura 2024 de la Liga MX! 🥳\n\n",
-  LaLIGA: "¡No te pierdas LALIGA EA Sports 2024-25! 🥳\n\n",
-  Premier12: "¡No te pierdas los partidos de la Premier12 WBSC - 2024! 🥳\n\n",
+  LMX: "¡No te pierdas el torneo de Clausura 2025 de la Liga MX! 🥳⚽\n\n",
+  LaLIGA: "¡No te pierdas LALIGA EA Sports 2024-25! 🥳⚽\n\n",
+  Premier: "¡No te pierdas la Premier League 2024-25! 🥳⚽\n\n",
+  LMP: "¡No te pierdas la temporada 2024 - 2025 de la 𝗟𝗠𝗣! 🥳⚾\n\n",
 };
 
 // Generar días dinámicos en el selector de día
@@ -154,13 +170,13 @@ function generateFlyer() {
     ctx.font = "900 40px Roboto";
     ctx.fillStyle = "#ffffff";
     ctx.textAlign = "center";
-    ctx.fillText(`${matchTime}`, 615, 665);
+    ctx.fillText(`${matchTime}`, 615, 750);
     ctx.textAlign = "right";
-    ctx.fillText(`${matchMonth}`, 512, 665);
+    ctx.fillText(`${matchMonth}`, 512, 750);
 
-    ctx.font = "900 40px Roboto";
-    ctx.fillStyle = "#FD4D16";
-    ctx.fillText(`${matchDay}`, 432, 665);
+    ctx.font = "900 41px Roboto";
+    ctx.fillStyle = "#FD730C";
+    ctx.fillText(`${matchDay}`, 432, 750);
 
     // Generar el texto dinámico para copiar
     const leagueMessage =
